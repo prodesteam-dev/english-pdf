@@ -21,7 +21,7 @@
     }
     h1 {
       text-align: center;
-      margin-bottom: 20px;
+      margin-bottom: 15px;
     }
     ul {
       list-style: none;
@@ -31,17 +31,19 @@
     li {
       padding: 14px;
       border-bottom: 1px solid #eee;
-      cursor: pointer;
       text-align: center;
+      cursor: pointer;
+      color: #1a4cff;
+      font-weight: bold;
     }
     li:hover {
       background: #f0f4ff;
     }
-    a {
-      text-decoration: none;
-      color: #1a4cff;
-      font-weight: bold;
-      display: block;
+    iframe {
+      width: 100%;
+      height: 70vh;
+      border: none;
+      margin-top: 15px;
     }
   </style>
 </head>
@@ -51,17 +53,25 @@
     <h1>File tài liệu</h1>
 
     <ul>
-      <li><a href="UnitTest_1.pdf" target="_blank">Unit Test 1</a></li>
-      <li><a href="UnitTest_2.pdf" target="_blank">Unit Test 2</a></li>
-      <li><a href="UnitTest_3.pdf" target="_blank">Unit Test 3</a></li>
-      <li><a href="UnitTest_4.pdf" target="_blank">Unit Test 4</a></li>
-      <li><a href="UnitTest_5.pdf" target="_blank">Unit Test 5</a></li>
-      <li><a href="UnitTest_6.pdf" target="_blank">Unit Test 6</a></li>
-      <li><a href="UnitTest_7.pdf" target="_blank">Unit Test 7</a></li>
-      <li><a href="UnitTest_8.pdf" target="_blank">Unit Test 8</a></li>
-      <li><a href="FinalTest_1.pdf" target="_blank">Final Test</a></li>
+      <li onclick="openPDF('UnitTest_1.pdf')">Unit Test 1</li>
+      <li onclick="openPDF('UnitTest_2.pdf')">Unit Test 2</li>
+      <li onclick="openPDF('UnitTest_3.pdf')">Unit Test 3</li>
+      <li onclick="openPDF('UnitTest_4.pdf')">Unit Test 4</li>
+      <li onclick="openPDF('UnitTest_5.pdf')">Unit Test 5</li>
+      <li onclick="openPDF('UnitTest_6.pdf')">Unit Test 6</li>
+      <li onclick="openPDF('UnitTest_7.pdf')">Unit Test 7</li>
+      <li onclick="openPDF('UnitTest_8.pdf')">Unit Test 8</li>
+      <li onclick="openPDF('FinalTest_1.pdf')">Final Test</li>
     </ul>
+
+    <iframe id="pdfViewer"></iframe>
   </div>
+
+  <script>
+    function openPDF(file) {
+      document.getElementById('pdfViewer').src = file;
+    }
+  </script>
 
 </body>
 </html>
